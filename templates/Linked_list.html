@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Operations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Linked List Operations</h1>
+        </nav>
+    </header>
+
+    <main>
+        <section class="operations">
+            <form method="POST" action="/update">
+                <label for="data">Enter Your Data:</label>
+                <input type="text" id="data" name="data" placeholder="Enter data (if needed)">
+                <div class="buttons">
+                    <button type="submit" name="operation" value="insert_beginning">Insert at Beginning</button>
+                    <button type="submit" name="operation" value="insert_end">Insert at End</button>
+                    <button type="submit" name="operation" value="remove_beginning">Remove Beginning</button>
+                    <button type="submit" name="operation" value="remove_end">Remove End</button>
+                    <button type="submit" name="operation" value="remove_at">Remove Specific Data</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="linked-list">
+            <h2>Current Linked List:</h2>
+            <ul>
+                {% for item in linked_list %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
